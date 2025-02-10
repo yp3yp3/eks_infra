@@ -9,8 +9,8 @@ phases:
       
       # Install Terraform
       - curl -O https://releases.hashicorp.com/terraform/1.3.6/terraform_1.3.6_linux_amd64.zip
-      - unzip terraform_1.3.6_linux_amd64.zip
-      - sudo mv terraform /usr/local/bin/
+      - unzip terraform_1.3.6_linux_amd64.zip -d /tmp/
+      - sudo mv /tmp/terraform /usr/local/bin/
       - terraform version
       
       # Initialize and apply Terraform configuration

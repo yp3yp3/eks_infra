@@ -6,8 +6,8 @@ phases:
        - sudo yum update -y 
        - sudo yum install -y unzip 
        - curl -O https://releases.hashicorp.com/terraform/0.15.4/terraform_0.15.4_linux_amd64.zip 
-       - unzip terraform_0.15.4_linux_amd64.zip 
-       - sudo mv terraform /usr/local/bin/ 
+       - unzip terraform_1.3.6_linux_amd64.zip -d /tmp/
+       - sudo mv /tmp/terraform /usr/local/bin/ 
        - terraform version 
        - cd terraform
        - terraform init 
