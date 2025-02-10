@@ -38,13 +38,13 @@ phases:
       
       # Extract ArgoCD initial password
       - ARGO_PASSWORD=$(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d)
-      - echo "ArgoCD Admin Password: $ARGO_PASSWORD"
+      - echo "ArgoCD Admin Password= $ARGO_PASSWORD"
       
       # Expose ArgoCD (optional, for local testing)
       - kubectl port-forward svc/argocd-server -n argocd 8080:443 &
       
       # Output ArgoCD login info
-      - echo "Login to ArgoCD: https://localhost:8080 (admin / $ARGO_PASSWORD)"
+      - echo "Login to ArgoCD= https://localhost:8080 (admin / $ARGO_PASSWORD)"
       
       # Apply ArgoCD application manifest from external file
       - kubectl apply -f ./argocd/argocd-application.yaml
