@@ -27,7 +27,9 @@ phases:
       - kubectl version --client
       
       # Configure kubectl to connect to EKS
+      - aws sts get-caller-identity
       - aws eks update-kubeconfig --name EKS_STAGE --region us-east-1
+      - kubectl get configmap aws-auth -n kube-system -o yaml
       
       # Deploy ArgoCD
       - kubectl create namespace argocd || true
